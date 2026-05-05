@@ -9,8 +9,20 @@ from app.core.config import get_settings
 
 settings = get_settings()
 
+
+def _normalize_db_url(url: str) -> str:
+    # Railway/Heroku/managed providers hand out URLs like postgresql://... or
+    # postgres://..., which SQLAlchemy resolves to psycopg2. We ship psycopg v3
+    # (`psycopg[binary]` in requirements.txt), so force that driver.
+    if url.startswith("postgres://"):
+        url = "postgresql://" + url[len("postgres://") :]
+    if url.startswith("postgresql://"):
+        url = "postgresql+psycopg://" + url[len("postgresql://") :]
+    return url
+
+
 engine = create_engine(
-    settings.database_url,
+    _normalize_db_url(settings.database_url),
     pool_pre_ping=True,
     future=True,
 )
