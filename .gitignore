@@ -33,6 +33,8 @@ Thumbs.db
 PLAN.md
 PROJECT_OVERVIEW.md
 
+docs/
+
 # DB / misc
 *.sqlite
 *.db
