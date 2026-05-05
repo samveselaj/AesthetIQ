@@ -103,7 +103,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
       {/* Desktop sidebar */}
       <aside className="fixed inset-y-0 left-0 z-20 hidden w-56 flex-col border-r border-border bg-bg lg:flex">
         <div className="flex h-14 items-center border-b border-border px-4">
-          <span className="text-sm font-semibold text-fg">MedSpa Assistant</span>
+          <span className="text-sm font-semibold text-fg">AesthetIQ</span>
         </div>
         <div className="flex-1 overflow-y-auto p-3">
           <NavList />
@@ -130,7 +130,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
 
       {/* Mobile top bar */}
       <header className="sticky top-0 z-10 flex h-14 items-center justify-between border-b border-border bg-bg px-4 lg:hidden">
-        <span className="text-sm font-semibold text-fg">MedSpa Assistant</span>
+        <span className="text-sm font-semibold text-fg">AesthetIQ</span>
         <div className="flex items-center gap-2">
           <ThemeToggle />
           <button
@@ -158,7 +158,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
           <div className="absolute inset-y-0 left-0 flex w-72 max-w-[85%] flex-col border-r border-border bg-bg">
             <div className="flex h-14 items-center justify-between border-b border-border px-4">
               <span className="text-sm font-semibold text-fg">
-                MedSpa Assistant
+                AesthetIQ
               </span>
               <button
                 onClick={() => setOpen(false)}

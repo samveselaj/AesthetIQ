@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "MedSpa Assistant",
+  title: "AesthetIQ",
   description: "Instant lead response and booking conversion for med spas.",
 };
 

@@ -81,7 +81,7 @@ def handle_event(db: Session, event_name: str, body: dict[str, Any]) -> None:
             link = f"{settings.app_url}/onboarding?token={tok.token}"
             send_email(
                 to=email,
-                subject="Finish setting up your MedSpa Assistant workspace",
+                subject="Finish setting up your AesthetIQ workspace",
                 html=(
                     f"<p>Thanks for subscribing! Click below to finish setup "
                     f"(link expires in 30 minutes):</p>"

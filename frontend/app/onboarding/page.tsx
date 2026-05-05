@@ -89,7 +89,7 @@ export default function OnboardingPage() {
   return (
     <main className="min-h-screen">
       <header className="flex h-14 items-center justify-between border-b border-border px-4 sm:px-6">
-        <span className="text-sm font-semibold text-fg">MedSpa Assistant</span>
+        <span className="text-sm font-semibold text-fg">AesthetIQ</span>
         <ThemeToggle />
       </header>
       <div className="mx-auto w-full max-w-2xl px-4 py-8 sm:py-12">

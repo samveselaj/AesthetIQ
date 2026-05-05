@@ -49,7 +49,7 @@ class Settings(BaseSettings):
     email_provider: str = "resend"  # or sendgrid
     resend_api_key: str | None = None
     sendgrid_api_key: str | None = None
-    email_from: str = "no-reply@medspa-assistant.local"
+    email_from: str = "no-reply@aesthetiq.local"
     email_live: bool = False
 
     # Demo

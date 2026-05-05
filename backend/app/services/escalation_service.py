@@ -49,7 +49,7 @@ def escalate(
         if rule.notify_email:
             send_email(
                 to=rule.notify_email,
-                subject=f"[MedSpa Assistant] Escalation: {reason}",
+                subject=f"[AesthetIQ] Escalation: {reason}",
                 html=_email_html(lead=lead, reason=reason, rule_name=rule.name),
                 text=_email_text(lead=lead, reason=reason, rule_name=rule.name),
             )

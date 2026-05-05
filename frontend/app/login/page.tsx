@@ -55,7 +55,7 @@ export default function LoginPage() {
   return (
     <main className="min-h-screen">
       <header className="flex h-14 items-center justify-between border-b border-border px-4 sm:px-6">
-        <span className="text-sm font-semibold text-fg">MedSpa Assistant</span>
+        <span className="text-sm font-semibold text-fg">AesthetIQ</span>
         <ThemeToggle />
       </header>
       <div className="mx-auto flex w-full max-w-sm flex-col px-4 py-10">
