@@ -7,15 +7,10 @@ type Health = {
   components: { twilio: string; openai: string };
 };
 
-const API =
-  (typeof window === "undefined"
-    ? process.env.INTERNAL_API_URL
-    : process.env.NEXT_PUBLIC_API_URL) || "http://localhost:8000";
-
 export function HealthBadge() {
   const { data } = useQuery<Health>({
     queryKey: ["health"],
-    queryFn: async () => (await fetch(`${API}/health`)).json(),
+    queryFn: async () => (await fetch("/api/backend-root/health")).json(),
     refetchInterval: 30_000,
   });
   const ok = data?.status === "ok";

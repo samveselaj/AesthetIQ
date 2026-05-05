@@ -1,10 +1,10 @@
-// Thin fetch wrapper. All browser-side calls go to NEXT_PUBLIC_API_URL directly
-// (cookie carries the JWT). Server components can use API_URL.
+// Browser calls go through the Next.js rewrite at /api/backend/* (same-origin,
+// no CORS). Server components hit INTERNAL_API_URL directly.
 
-const API =
-  (typeof window === "undefined"
-    ? process.env.INTERNAL_API_URL
-    : process.env.NEXT_PUBLIC_API_URL) || "http://localhost:8000";
+const API_BASE =
+  typeof window === "undefined"
+    ? `${(process.env.INTERNAL_API_URL || "http://localhost:8000").replace(/\/+$/, "")}/api/v1`
+    : "/api/backend";
 
 export class ApiError extends Error {
   status: number;
@@ -21,7 +21,7 @@ export async function api<T>(
   init: RequestInit & { json?: unknown } = {}
 ): Promise<T> {
   const { json, headers, ...rest } = init;
-  const res = await fetch(`${API}/api/v1${path}`, {
+  const res = await fetch(`${API_BASE}${path}`, {
     credentials: "include",
     headers: {
       "Content-Type": "application/json",
